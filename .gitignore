@@ -1,6 +1,6 @@
 # Ignore the cache folder
 cache/
-
+*.ipynb
 # Ignore Python compiled files
 __pycache__/
 *.pyc
@@ -9,3 +9,4 @@ __pycache__/
 venv/
 env/
 .env
+
