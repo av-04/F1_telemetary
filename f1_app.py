@@ -5,6 +5,7 @@ import fastf1
 import fastf1.plotting 
 import numpy as np
 import os
+import racing_line
 sd.set_page_config(page_title="F1_telemetary_comparisions", layout="wide")
 
 cache_dir='cache'
@@ -104,7 +105,17 @@ if sd.sidebar.button("Load Telemetry"):
                 ax2.set_xlabel("Distance (m)")
                 
                 sd.pyplot(fig2)
-            
+
+
+                #FOR_RACING_LINE
+                sd.subheader("racing_line_analysis")
+                sd.write(f"Visualizing **{d1}'s** fastest lap.")
+                with sd.spinner(f"Generating track_graph for {d1}"):
+                    fig_track=racing_line.plot_racing_line(session, d1)
+                    if fig_track:
+                        sd.pyplot(fig_track)
+                    else:
+                        sd.error("no map")
             except Exception as e:
                 sd.error(f"An error occurred during plotting: {e}")
 
