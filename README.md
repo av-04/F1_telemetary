@@ -7,6 +7,8 @@ A Python-based telemetry analysis tool that allows users to compare Formula 1 dr
 * **Speed Trace Analysis:** Compare speed vs. distance for any two drivers.
 * **Gap Analysis (Delta):** visualizes where one driver is gaining or losing time against another using linear interpolation.
 * **Corner Visualization:** Highlights track sectors and braking zones.
+* **Elo rating and Prediction of the next season:** Uses a Elo rating system named strat_score which uses the finishing position,overtaking and consistency
+   $$\text{Strat\_Score} = \text{Base} + S_{\text{Finish}} + S_{\text{Overtake}} + S_{\text{Consistency}}$$
 
 ## 🛠️ Tech Stack
 * **Python 3.10+**
@@ -29,6 +31,7 @@ A Python-based telemetry analysis tool that allows users to compare Formula 1 dr
    ```bash
    git clone [https://github.com/YOUR_USERNAME/f1-telemetry-app.git](https://github.com/YOUR_USERNAME/f1-telemetry-app.git)
    cd f1-telemetry-app
+
 
 
 
