@@ -143,11 +143,11 @@ if sd.sidebar.button("Load Telemetry"):
                 if score_d1 > score_d2:
                     gap = score_d1 - score_d2
                     sd.success(f" **WINNER: {d1}** (+{gap} pts)")
-                    sd.write(f"The Strat_Score algorithm predicts **{d1}** will have a stronger 2025 season based on higher consistency and racecraft in this session.")
+                    sd.write(f"The Strat_Score algorithm predicts **{d1}** will have a stronger 2025 session based on higher consistency and racecraft in this session.")
                 elif score_d2 > score_d1:
                     gap = score_d2 - score_d1
                     sd.success(f" **WINNER: {d2}** (+{gap} pts)")
-                    sd.write(f"The Strat_Score algorithm predicts **{d2}** will have a stronger 2025 season based on higher consistency and racecraft in this session.")
+                    sd.write(f"The Strat_Score algorithm predicts **{d2}** will have a stronger 2025 session based on higher consistency and racecraft in this session.")
                 else:
                     sd.warning(" **It's a Tie!**")     
             except Exception as e:
