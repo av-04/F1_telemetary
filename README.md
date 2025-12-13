@@ -19,6 +19,7 @@ A Python-based telemetry analysis tool that allows users to compare Formula 1 dr
 <img width="1919" height="935" alt="Screenshot 2025-12-07 031044" src="https://github.com/user-attachments/assets/7eca13ac-cb37-4a50-888c-509d950f68a6" />
 <img width="1919" height="936" alt="Screenshot 2025-12-07 031053" src="https://github.com/user-attachments/assets/723ab731-03ba-4395-9da1-e6c190871555" />
 <img width="1252" height="1318" alt="b1765bcdcb5f999d48a6c797863bbc22c1ae8da0c012126acd1e1271" src="https://github.com/user-attachments/assets/b6934903-550c-4a07-a43a-092ee48e7d79" />
+<img width="1918" height="821" alt="image" src="https://github.com/user-attachments/assets/6a17a527-e509-4dcb-b785-4ec637c49a75" />
 
 
 
@@ -28,5 +29,6 @@ A Python-based telemetry analysis tool that allows users to compare Formula 1 dr
    ```bash
    git clone [https://github.com/YOUR_USERNAME/f1-telemetry-app.git](https://github.com/YOUR_USERNAME/f1-telemetry-app.git)
    cd f1-telemetry-app
+
 
 
