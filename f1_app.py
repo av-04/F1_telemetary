@@ -6,6 +6,7 @@ import fastf1.plotting
 import numpy as np
 import os
 import racing_line
+import strat_score
 sd.set_page_config(page_title="F1_telemetary_comparisions", layout="wide")
 
 cache_dir='cache'
@@ -118,6 +119,36 @@ if sd.sidebar.button("Load Telemetry"):
                         sd.error("no map")
             except Exception as e:
                 sd.error(f"An error occurred during plotting: {e}")
+
+                #FOR_ELORATINGANDPREDICTION
+                sd.subheader("2025 Prediction using Strat_Score")
+                sd.info(f"Comparing Pace, Overtaking, and Consistency to predict 2025 potential.")
+                col1, col2=sd.columns(2)
+                score_d1=strat_score.calculate_strat_score(session, d1)
+                score_d2=strat_score.calculate_strat_score(session, d2)
+                proj_pts_d1 = max(0, int((score_d1 - 1000) * 0.6))
+                proj_pts_d2 = max(0, int((score_d2 - 1000) * 0.6))    
+                with col1:
+                    sd.metric(label=f"{d1} Rating", value=f"{score_d1}", delta=f"{proj_pts_d1} Proj. Pts")
+                    sd.progress(min(max((score_d1 - 1000) / 1500, 0.0), 1.0))
+                    
+                with col2:
+                    sd.metric(label=f"{d2} Rating", value=f"{score_d2}", delta=f"{proj_pts_d2} Proj. Pts")
+                    sd.progress(min(max((score_d2 - 1000) / 1500, 0.0), 1.0))
+
+                # The_Verdict
+                if score_d1 > score_d2:
+                    gap = score_d1 - score_d2
+                    sd.success(f" **WINNER: {d1}** (+{gap} pts)")
+                    sd.write(f"The Strat_Score algorithm predicts **{d1}** will have a stronger 2025 season based on higher consistency and racecraft in this session.")
+                elif score_d2 > score_d1:
+                    gap = score_d2 - score_d1
+                    sd.success(f" **WINNER: {d2}** (+{gap} pts)")
+                    sd.write(f"The Strat_Score algorithm predicts **{d2}** will have a stronger 2025 season based on higher consistency and racecraft in this session.")
+                else:
+                    sd.warning(" **It's a Tie!**")     
+            except Exception as e:
+                sd.error(f"An error occurred during processing: {e}")       
 
     else:
         sd.warning(f"Could not find a race named '{grand_prix}' in {year}. Please check your spelling.")
