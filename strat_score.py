@@ -2,12 +2,12 @@ import fastf1
 import pandas as pd
 import numpy as np
 
-def strat_score(session, driver):
+def calc_strat_score(session, driver):
     try:
         laps=session.laps.pick_driver(driver)
         if laps.empty:
             return 1000
-        result = session.results.loc[session.results['Abbrevation']==driver].iloc[0]
+        result = session.results.loc[session.results['Abbreviation']==driver].iloc[0]
 
         #finsihing position
         finish_pos = result['ClassifiedPosition']

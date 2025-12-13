@@ -7,7 +7,7 @@ import numpy as np
 import os
 import racing_line
 import strat_score
-sd.set_page_config(page_title="F1_telemetary_comparisions", layout="wide")
+sd.set_page_config(page_title="F1_telemetry_comparisions", layout="wide")
 
 cache_dir='cache'
 if not os.path.exists(cache_dir):
@@ -20,7 +20,7 @@ def load_session(year, gp, session_type):
     session.load()
     return session
 
-sd.sidebar.title("telemetary settings")
+sd.sidebar.title("telemetry settings")
 grand_prix = sd.sidebar.text_input("Race Location", "Monaco")
 year=sd.sidebar.selectbox("Year",[2020,2021,2022,2023,2024])
 session_map = {
@@ -109,6 +109,7 @@ if sd.sidebar.button("Load Telemetry"):
 
 
                 #FOR_RACING_LINE
+                sd.markdown("---")
                 sd.subheader("racing_line_analysis")
                 sd.write(f"Visualizing **{d1}'s** fastest lap.")
                 with sd.spinner(f"Generating track_graph for {d1}"):
@@ -121,11 +122,13 @@ if sd.sidebar.button("Load Telemetry"):
                 sd.error(f"An error occurred during plotting: {e}")
 
                 #FOR_ELORATINGANDPREDICTION
-                sd.subheader("2025 Prediction using Strat_Score")
+            sd.markdown("---")
+            sd.subheader("2025 Prediction using Strat_Score")
+            try:
                 sd.info(f"Comparing Pace, Overtaking, and Consistency to predict 2025 potential.")
                 col1, col2=sd.columns(2)
-                score_d1=strat_score.strat_score(session, d1)
-                score_d2=strat_score.strat_score(session, d2)
+                score_d1=strat_score.calc_strat_score(session, d1)
+                score_d2=strat_score.calc_strat_score(session, d2)
                 proj_pts_d1 = max(0, int((score_d1 - 1000) * 0.6))
                 proj_pts_d2 = max(0, int((score_d2 - 1000) * 0.6))    
                 with col1:
@@ -148,7 +151,7 @@ if sd.sidebar.button("Load Telemetry"):
                 else:
                     sd.warning(" **It's a Tie!**")     
             except Exception as e:
-                sd.error(f"An error occurred during processing: {e}")       
+                    sd.error(f"An error occurred during processing: {e}")       
 
     else:
         sd.warning(f"Could not find a race named '{grand_prix}' in {year}. Please check your spelling.")
