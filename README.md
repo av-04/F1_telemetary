@@ -9,6 +9,7 @@ A Python-based telemetry analysis tool that allows users to compare Formula 1 dr
 * **Corner Visualization:** Highlights track sectors and braking zones.
 * **Elo rating and Prediction of the next season:** Uses a Elo rating system named strat_score which uses the finishing position,overtaking and consistency
    $$\text{Strat\_Score} = \text{Base} + S_{\text{Finish}} + S_{\text{Overtake}} + S_{\text{Consistency}}$$
+   By summing these three factors, the model can identify that a driver who started P20 and finished P8 might actually have performed better (higher score) than a driver who started P1 and finished P1, because       the recovery drive required more "Racecraft" and "Consistency.
 
 ## 🛠️ Tech Stack
 * **Python 3.10+**
@@ -31,6 +32,7 @@ A Python-based telemetry analysis tool that allows users to compare Formula 1 dr
    ```bash
    git clone [https://github.com/YOUR_USERNAME/f1-telemetry-app.git](https://github.com/YOUR_USERNAME/f1-telemetry-app.git)
    cd f1-telemetry-app
+
 
 
 
