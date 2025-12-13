@@ -107,9 +107,4 @@ Contributions are welcome! Please open an issue for discussion or submit a pull 
 2. Tests (if applicable) or screenshots for UI changes.
 3. Updated docs or README entries for new features.
 
-## License
-Specify your license here (e.g., MIT). If you don't have a license file yet, add one (LICENSE) to make the project's license explicit.
-
-## Contact
-If you have questions, feature requests, or bug reports, open an issue on the repository or contact the maintainer.
 
