@@ -101,14 +101,6 @@ A Python-based telemetry analysis tool that allows users to compare Formula 1 dr
 * Visualization scaling/overlap:
   - If labels overlap on small screens, expand the browser width or save figures to inspect.
 
-## Math rendering note
-GitHub README pages do not render LaTeX math (MathJax/KaTeX) by default, so expressions like $$\text{Strat\_Score} = \text{Base} + S_{\text{Finish}} + S_{\text{Overtake}} + S_{\text{Consistency}}$$ will appear as raw text.
-
-Options to get rendered math:
-* Use GitHub Pages (Jekyll) or another documentation site and enable MathJax/KaTeX.
-* Include the equation as an image (SVG/PNG) and embed it in the README.
-* Keep a plain-text or code-formatted formula in the README (as done above) for portability.
-
 ## Contributing
 Contributions are welcome! Please open an issue for discussion or submit a pull request with:
 1. A clear description of the change.
@@ -120,3 +112,4 @@ Specify your license here (e.g., MIT). If you don't have a license file yet, add
 
 ## Contact
 If you have questions, feature requests, or bug reports, open an issue on the repository or contact the maintainer.
+
