@@ -7,7 +7,7 @@ def strat_score(session, driver):
         laps=session.laps.pick_driver(driver)
         if laps.empty:
             return 1000
-        result = session.result.loc[session.results['Abbrevations']==driver].iloc[0]
+        result = session.results.loc[session.results['Abbrevation']==driver].iloc[0]
 
         #finsihing position
         finish_pos = result['ClassifiedPosition']

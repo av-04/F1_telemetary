@@ -124,8 +124,8 @@ if sd.sidebar.button("Load Telemetry"):
                 sd.subheader("2025 Prediction using Strat_Score")
                 sd.info(f"Comparing Pace, Overtaking, and Consistency to predict 2025 potential.")
                 col1, col2=sd.columns(2)
-                score_d1=strat_score.calculate_strat_score(session, d1)
-                score_d2=strat_score.calculate_strat_score(session, d2)
+                score_d1=strat_score.strat_score(session, d1)
+                score_d2=strat_score.strat_score(session, d2)
                 proj_pts_d1 = max(0, int((score_d1 - 1000) * 0.6))
                 proj_pts_d2 = max(0, int((score_d2 - 1000) * 0.6))    
                 with col1:
