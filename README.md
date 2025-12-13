@@ -19,8 +19,6 @@ A Python-based telemetry analysis tool that allows users to compare Formula 1 dr
   - S_Overtake: bonus for overtaking moves made during the race
   - S_Consistency: reward/penalty based on lap-to-lap consistency
 
-  Note: The original LaTeX-style equation (e.g. $$...$$) will not render on GitHub README — see the "Math rendering" note below for options.
-
 ## 🛠️ Tech Stack
 * **Python 3.10+**
 * **Streamlit** (Frontend/UI)
@@ -105,6 +103,7 @@ Contributions are welcome! Please open an issue for discussion or submit a pull 
 1. A clear description of the change.
 2. Tests (if applicable) or screenshots for UI changes.
 3. Updated docs or README entries for new features.
+
 
 
 
